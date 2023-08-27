@@ -7,7 +7,11 @@ from PIL import Image
 
 def extract_user_input(image=None):
 
-    model = YOLO("best (2).pt")
+    id = "1e2pHejcp96q-NT9VmIDEY_hCA-tiFNef"
+    output = "trained_model.pt"
+    gdown.download(id = id, output = output, quiet=False)
+
+    model = YOLO(output)
 
     result = model.predict(image)
 
